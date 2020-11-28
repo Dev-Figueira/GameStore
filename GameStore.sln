@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B558B775-4FA6-4D3C-9246-EB08302042E6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{C2A4BFED-20B0-4A2B-AD1E-BB6DCE21C326}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "web", "web", "{F752FBE7-FD49-40F1-BDF0-22FB6DE1518F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Store", "Store", "{DA7CDE42-03C0-4737-B53F-5071B2E62041}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC", "MVC", "{E82CA3E6-4F22-4674-982B-8D0230AB5146}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.API", "src\services\GameStore.API\GameStore.API.csproj", "{03866861-11C3-419F-B398-715590742002}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.WebApp.MVC", "src\web\GameStore.WebApp.MVC\GameStore.WebApp.MVC.csproj", "{094CFA08-4401-4F7E-86F0-D2ED8392E794}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03866861-11C3-419F-B398-715590742002}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03866861-11C3-419F-B398-715590742002}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03866861-11C3-419F-B398-715590742002}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03866861-11C3-419F-B398-715590742002}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094CFA08-4401-4F7E-86F0-D2ED8392E794}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094CFA08-4401-4F7E-86F0-D2ED8392E794}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094CFA08-4401-4F7E-86F0-D2ED8392E794}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094CFA08-4401-4F7E-86F0-D2ED8392E794}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2A4BFED-20B0-4A2B-AD1E-BB6DCE21C326} = {B558B775-4FA6-4D3C-9246-EB08302042E6}
+		{F752FBE7-FD49-40F1-BDF0-22FB6DE1518F} = {B558B775-4FA6-4D3C-9246-EB08302042E6}
+		{DA7CDE42-03C0-4737-B53F-5071B2E62041} = {C2A4BFED-20B0-4A2B-AD1E-BB6DCE21C326}
+		{E82CA3E6-4F22-4674-982B-8D0230AB5146} = {F752FBE7-FD49-40F1-BDF0-22FB6DE1518F}
+		{03866861-11C3-419F-B398-715590742002} = {DA7CDE42-03C0-4737-B53F-5071B2E62041}
+		{094CFA08-4401-4F7E-86F0-D2ED8392E794} = {E82CA3E6-4F22-4674-982B-8D0230AB5146}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1535EDA-7573-49EA-B87A-E2A68342FA2E}
+	EndGlobalSection
+EndGlobal
