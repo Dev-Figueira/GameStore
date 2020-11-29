@@ -1,0 +1,9 @@
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.RazorTargetAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\staticwebassets\GameStore.API.StaticWebAssets.Manifest.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\staticwebassets\GameStore.API.StaticWebAssets.xml

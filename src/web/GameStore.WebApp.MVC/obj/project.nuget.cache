@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "snrtmsZ+cTr3W02MasZBRkpdjujiSbsrw6wKpqUr/u84AAB9wsqMxIreyhAbKyAfHQ9DJjpzGClnI0EuictjrQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\web\\GameStore.WebApp.MVC\\GameStore.WebApp.MVC.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512"
+  ],
+  "logs": []
+}
