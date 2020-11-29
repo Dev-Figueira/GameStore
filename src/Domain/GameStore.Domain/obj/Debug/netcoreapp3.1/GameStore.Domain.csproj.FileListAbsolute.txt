@@ -1,0 +1,9 @@
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\bin\Debug\netcoreapp3.1\GameStore.Domain.deps.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\bin\Debug\netcoreapp3.1\GameStore.Domain.dll
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\bin\Debug\netcoreapp3.1\GameStore.Domain.pdb
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.dll
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Domain\GameStore.Domain\obj\Debug\netcoreapp3.1\GameStore.Domain.pdb
