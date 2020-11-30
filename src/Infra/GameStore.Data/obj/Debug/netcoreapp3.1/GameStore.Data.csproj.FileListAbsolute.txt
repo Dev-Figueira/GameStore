@@ -1,0 +1,15 @@
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Data.deps.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Data.dll
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Data.pdb
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Domain.dll
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Domain.pdb
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.csprojAssemblyReference.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.AssemblyInfoInputs.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.AssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.csproj.CopyComplete
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.dll
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.pdb
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Data.runtimeconfig.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\bin\Debug\netcoreapp3.1\GameStore.Data.runtimeconfig.dev.json
+C:\Users\Rodrigo\Desktop\Projeto-Invilia\GameStore\src\Infra\GameStore.Data\obj\Debug\netcoreapp3.1\GameStore.Data.genruntimeconfig.cache
