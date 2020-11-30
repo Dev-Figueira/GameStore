@@ -9,7 +9,10 @@
 
   <ItemGroup>
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.7" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
 	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.7" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.7" />
 	  <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.7" />
@@ -21,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\GameStore.Domain\GameStore.Domain.csproj" />
+    <ProjectReference Include="..\..\Infra\GameStore.Data\GameStore.Data.csproj" />
   </ItemGroup>
 
 
