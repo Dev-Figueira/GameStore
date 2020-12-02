@@ -2,7 +2,6 @@
 using GameStore.Identidade.API.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -20,21 +19,18 @@ namespace GameStore.API.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
-        private readonly ILogger _logger;
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings,
-                              ILogger<AuthController> logger)
+                              IOptions<AppSettings> appSettings)
         {
             _signInManager = signInManager;
             _userManager = userManager;
-            _logger = logger;
             _appSettings = appSettings.Value;
         }
 
         [HttpPost("nova-conta")]
-        public async Task<ActionResult> Registrar(UsuarioRegistro usuarioRegistro)
+        public async Task<ActionResult> Registrar([FromBody]UsuarioRegistro usuarioRegistro)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
@@ -46,39 +42,42 @@ namespace GameStore.API.Controllers
             };
 
             var result = await _userManager.CreateAsync(user, usuarioRegistro.Senha);
+
             if (result.Succeeded)
             {
                 await _signInManager.SignInAsync(user, false);
-                return CustomResponse(await GerarJwt(user.Email));
+                return CustomResponse(await GerarJwt(usuarioRegistro.Email));
             }
+
             foreach (var error in result.Errors)
             {
                 AdicionarErroProcessamento(error.Description);
             }
 
-            return CustomResponse(usuarioRegistro);
+            return CustomResponse();
         }
 
-        [HttpPost("entrar")]
-        public async Task<ActionResult> Login(UsuarioLogin loginUser)
+        [HttpPost("autenticar")]
+        public async Task<ActionResult> Login([FromBody]UsuarioLogin usuarioLogin)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
-            var result = await _signInManager.PasswordSignInAsync(loginUser.Email, loginUser.Senha, false, true);
+            var result = await _signInManager.PasswordSignInAsync(usuarioLogin.Email, usuarioLogin.Senha,
+                false, true);
 
             if (result.Succeeded)
             {
-                _logger.LogInformation("Usuario " + loginUser.Email + " logado com sucesso");
-                return CustomResponse(await GerarJwt(loginUser.Email));
+                return CustomResponse(await GerarJwt(usuarioLogin.Email));
             }
+
             if (result.IsLockedOut)
             {
                 AdicionarErroProcessamento("Usuário temporariamente bloqueado por tentativas inválidas");
-                return CustomResponse(loginUser);
+                return CustomResponse();
             }
 
-            AdicionarErroProcessamento("Usuário ou Senha incorretos");
-            return CustomResponse(loginUser);
+            AdicionarErroProcessamento("Usuário temporariamente bloqueado por tentativas inválidas");
+            return CustomResponse();
         }
 
         private async Task<UsuarioRespostaLogin> GerarJwt(string email)

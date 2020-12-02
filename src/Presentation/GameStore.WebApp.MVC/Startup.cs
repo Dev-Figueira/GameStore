@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GameStore.Data.Context;
+using GameStore.WebApp.MVC.Configuration;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,14 +25,17 @@ namespace GameStore.WebApp.MVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<GameStoreDbContex>(op =>
-                op.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddIdentityConfiguration();
 
-            services.AddControllersWithViews();
+            services.AddMvcConfiguration(Configuration);
+
+            services.RegisterServices();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseIdentityConfiguration();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -45,8 +49,6 @@ namespace GameStore.WebApp.MVC
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
