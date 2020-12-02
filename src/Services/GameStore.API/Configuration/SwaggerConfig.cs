@@ -15,7 +15,7 @@ namespace GameStore.API.Configuration
                 {
                     Title = "Game Store API",
                     Description = "Esta API faz parte do projeto Game Store.",
-                    Contact = new OpenApiContact() { Name = "Eduardo Pires", Email = "rodrigo.figueiraufg@gmail.com" },
+                    Contact = new OpenApiContact() { Name = "Rodrigo Figueira", Email = "rodrigo.figueiraufg@gmail.com" },
                     License = new OpenApiLicense() { Name = "MIT", Url = new Uri("https://opensource.org/licenses/MIT") }
                 });
 
