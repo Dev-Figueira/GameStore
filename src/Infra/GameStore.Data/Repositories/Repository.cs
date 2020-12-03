@@ -28,6 +28,7 @@ namespace GameStore.Data.Repositories
 
         public virtual async Task<TEntity> ObterPorId(Guid id)
         {
+            Db.Entry(new TEntity { Id = id }).State = EntityState.Detached;
             return await DbSet.FindAsync(id);
         }
 
@@ -38,18 +39,21 @@ namespace GameStore.Data.Repositories
 
         public virtual async Task Adicionar(TEntity entity)
         {
+            DetachLocal(entity);
             DbSet.Add(entity);
             await SaveChanges();
         }
 
         public virtual async Task Atualizar(TEntity entity)
         {
+            DetachLocal(entity);
             DbSet.Update(entity);
             await SaveChanges();
         }
 
         public virtual async Task Remover(Guid id)
         {
+            DetachLocal(new TEntity { Id = id });
             DbSet.Remove(new TEntity { Id = id });
             await SaveChanges();
         }
@@ -57,6 +61,22 @@ namespace GameStore.Data.Repositories
         public async Task<int> SaveChanges()
         {
             return await Db.SaveChangesAsync();
+        }
+
+        public virtual void DetachLocal(TEntity entity)
+        {
+            var local = DbSet.Local.FirstOrDefault(entry => entry.Id.Equals(entity.Id));
+            Db.Entry(entity).State = EntityState.Detached;
+
+            if (local != null)
+            {
+                Db.Entry(local).State = EntityState.Detached;
+            }
+            else
+            {
+                var entry = Db.Entry(entity);
+                entry.State = EntityState.Modified;
+            }
         }
 
         public void Dispose()

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using GameStore.Data.Context;
 using GameStore.WebApp.MVC.Configuration;
 using Microsoft.AspNetCore.Builder;
@@ -25,7 +26,9 @@ namespace GameStore.WebApp.MVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddIdentityConfiguration();
+            services.AddIdentityConfiguration(Configuration);
+
+            services.AddAutoMapper(typeof(Startup));
 
             services.AddMvcConfiguration(Configuration);
 
@@ -34,28 +37,7 @@ namespace GameStore.WebApp.MVC
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseIdentityConfiguration();
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvcConfiguration(env);
         }
     }
 }

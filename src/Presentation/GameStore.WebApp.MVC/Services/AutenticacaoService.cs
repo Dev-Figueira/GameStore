@@ -1,4 +1,5 @@
-﻿using GameStore.WebApp.MVC.Models;
+﻿using GameStore.Domain.Interfaces;
+using GameStore.WebApp.MVC.Models;
 using GameStore.WebApp.MVC.Services.Interfaces;
 using System.Net.Http;
 using System.Text;
@@ -11,7 +12,8 @@ namespace GameStore.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public AutenticacaoService(HttpClient httpClient)
+        public AutenticacaoService(HttpClient httpClient,
+                                   INotificador notificador) : base(notificador)
         {
             _httpClient = httpClient;
         }

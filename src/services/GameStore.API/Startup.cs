@@ -37,7 +37,6 @@ namespace GameStore.API
             services.AddApiConfiguration();
 
             services.AddSwaggerConfiguration();
-
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

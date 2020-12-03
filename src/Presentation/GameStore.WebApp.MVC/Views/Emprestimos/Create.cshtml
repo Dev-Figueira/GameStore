@@ -1,0 +1,53 @@
+﻿@model GameStore.WebApp.MVC.Models.EmprestimoViewModel
+
+@{
+    ViewData["Title"] = "Novo Emprestimo";
+    List<JogoViewModel> _jogoLista = ViewBag.ComboJogos;
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create">
+
+            <vc:Summary></vc:Summary>
+
+            <div class="form-group">
+                <label asp-for="Jogo.Nome" class="control-label"></label>
+                <div class="col-md-15">
+                    @{
+                        var listItemsJogo = new List<SelectListItem>();
+
+                        if (_jogoLista != null)
+                        {
+                            listItemsJogo = _jogoLista.Select(x => new SelectListItem
+                            {
+                                Value = x.Id.ToString(),
+                                Text = x.Nome
+                            }).ToList();
+                        }
+
+                    }
+                    @Html.DropDownListFor(model => model.Jogo.Id, listItemsJogo, "Selecione um Jogo", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Jogo.Id, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <h4>Amigo</h4>
+            <hr />
+
+            <partial name="_Amigo" />
+
+            <div class="form-group">
+                <input type="submit" value="Cadastrar" class="btn btn-primary" />
+                <a class="btn btn-info" asp-action="Index">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

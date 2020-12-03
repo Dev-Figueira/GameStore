@@ -27,5 +27,9 @@
     <ProjectReference Include="..\..\Infra\GameStore.Data\GameStore.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 
 </Project>

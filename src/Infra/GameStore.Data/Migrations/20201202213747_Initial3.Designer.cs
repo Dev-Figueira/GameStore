@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameStore.Data.Migrations
 {
     [DbContext(typeof(GameStoreDbContex))]
-    [Migration("20201130144728_inicial")]
-    partial class inicial
+    [Migration("20201202213747_Initial3")]
+    partial class Initial3
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -34,17 +34,11 @@ namespace GameStore.Data.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("varchar(250)");
 
-                    b.Property<Guid>("EmprestimoId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("varchar(100)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("EmprestimoId")
-                        .IsUnique();
 
                     b.ToTable("Amigos");
                 });
@@ -55,7 +49,17 @@ namespace GameStore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AmigoId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("JogoId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("AmigoId");
+
+                    b.HasIndex("JogoId");
 
                     b.ToTable("Emprestimos");
                 });
@@ -64,9 +68,6 @@ namespace GameStore.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("EmprestimoId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Genero")
@@ -79,24 +80,19 @@ namespace GameStore.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EmprestimoId");
-
                     b.ToTable("Jogos");
                 });
 
-            modelBuilder.Entity("GameStore.Domain.Models.Amigo", b =>
+            modelBuilder.Entity("GameStore.Domain.Models.Emprestimo", b =>
                 {
-                    b.HasOne("GameStore.Domain.Models.Emprestimo", "Emprestimo")
-                        .WithOne("Amigo")
-                        .HasForeignKey("GameStore.Domain.Models.Amigo", "EmprestimoId")
+                    b.HasOne("GameStore.Domain.Models.Amigo", "Amigo")
+                        .WithMany()
+                        .HasForeignKey("AmigoId")
                         .IsRequired();
-                });
 
-            modelBuilder.Entity("GameStore.Domain.Models.Jogo", b =>
-                {
-                    b.HasOne("GameStore.Domain.Models.Emprestimo", "Emprestimo")
-                        .WithMany("Jogos")
-                        .HasForeignKey("EmprestimoId")
+                    b.HasOne("GameStore.Domain.Models.Jogo", "Jogo")
+                        .WithMany()
+                        .HasForeignKey("JogoId")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

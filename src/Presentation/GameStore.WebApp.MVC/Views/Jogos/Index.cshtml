@@ -1,0 +1,16 @@
+﻿@model IEnumerable<GameStore.WebApp.MVC.Models.JogoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Jogos";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+
+<vc:Summary></vc:Summary>
+
+<p supress-by-claim-value="Adicionar">
+    <a class="btn btn-info" asp-action="Create">Novo Jogo</a>
+</p>
+
+<partial name="_ListaJogos" />
