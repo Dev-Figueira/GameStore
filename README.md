@@ -2,7 +2,7 @@
 
 Projeto de teste para vaga de Dev .NET na Invillia.
  
-A aplicação é composta de uma API desenvolvida em .NET Core com base de dados em SQLServer e frontend baseado em Angular.
+A aplicação é composta de uma API desenvolvida em .NET Core com base de dados em SQLServer.
 
 ## Requisitos
 
