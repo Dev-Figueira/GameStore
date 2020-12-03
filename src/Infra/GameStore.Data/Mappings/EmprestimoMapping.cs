@@ -10,14 +10,15 @@ namespace GameStore.Data.Models
         {
             builder.HasKey(e => e.Id);
 
-            // 1 : 1 => Emprestimo : Amigo
-            builder.HasOne(e => e.Amigo)
-                .WithOne(a => a.Emprestimo);
+            builder.Property(a => a.AmigoId);
 
-            // 1 : N => Emprestimo : Jogo
-            builder.HasMany(f => f.Jogos)
-                .WithOne(e => e.Emprestimo)
-                .HasForeignKey(e => e.EmprestimoId);
+            builder.Property(h => h.JogoId);
+
+            builder.HasOne(h => h.Amigo)
+                .WithMany().HasForeignKey(h => h.AmigoId);
+
+            builder.HasOne(h => h.Jogo)
+                .WithMany().HasForeignKey(h => h.JogoId);
 
             builder.ToTable("Emprestimos");
         }

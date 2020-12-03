@@ -1,0 +1,44 @@
+﻿@using GameStore.WebApp.MVC.Extensions
+@model IEnumerable<GameStore.WebApp.MVC.Models.EmprestimoViewModel>
+
+@{
+    ViewData["Title"] = "Lista de Emprestimos";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Novo Emprestimo</a>
+</p>
+
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Jogo.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amigo.Nome)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Jogo.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amigo.Nome)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

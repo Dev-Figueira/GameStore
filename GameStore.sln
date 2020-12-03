@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore.Domain", "src\Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore.WebApp.MVC", "src\Presentation\GameStore.WebApp.MVC\GameStore.WebApp.MVC.csproj", "{048A6C94-F858-4599-812C-38DFECE5F987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Data", "src\Infra\GameStore.Data\GameStore.Data.csproj", "{F141FF51-0584-407D-BCA1-56D00196524F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GameStore.Data", "src\Infra\GameStore.Data\GameStore.Data.csproj", "{F141FF51-0584-407D-BCA1-56D00196524F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{380925C1-739A-4A77-85FA-D55FA37FA860}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

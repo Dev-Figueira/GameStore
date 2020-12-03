@@ -1,0 +1,41 @@
+﻿@model GameStore.WebApp.MVC.Models.EmprestimoViewModel
+
+<div style="padding-top: 20px">
+    <div>
+        <hr />
+        <h4>Jogo</h4>
+    </div>
+
+    @if (Model != null)
+    {
+        <table class="table table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Jogo.Nome)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Jogo.Genero)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Jogo.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.Jogo.Genero)
+                </td>
+                <td>
+                    <a asp-action="AtualizarJogo" asp-route-id="@Model.Id" class="btn btn-info" data-modal="">
+                        <span title="Editar">Editar</span>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    }
+
+</div>
+

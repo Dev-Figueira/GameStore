@@ -1,6 +1,7 @@
-﻿using GameStore.Domain.Models;
-using GameStore.WebApp.MVC.Models;
+﻿using GameStore.WebApp.MVC.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace GameStore.WebApp.MVC.Controllers
@@ -22,14 +23,45 @@ namespace GameStore.WebApp.MVC.Controllers
             return false;
         }
 
-        protected void AdicionarErroValidacao(string mensagem)
+        protected ICollection<string> Erros = new List<string>();
+
+        protected ActionResult CustomResponse(object result = null)
         {
-            ModelState.AddModelError(string.Empty, mensagem);
+            if (OperacaoValida())
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(new ValidationProblemDetails(new Dictionary<string, string[]>
+            {
+                { "Mensagens", Erros.ToArray() }
+            }));
+        }
+
+        protected ActionResult CustomResponse(ModelStateDictionary modelState)
+        {
+            var erros = modelState.Values.SelectMany(e => e.Errors);
+            foreach (var erro in erros)
+            {
+                AdicionarErroProcessamento(erro.ErrorMessage);
+            }
+
+            return CustomResponse();
         }
 
         protected bool OperacaoValida()
         {
-            return ModelState.ErrorCount == 0;
+            return !Erros.Any();
+        }
+
+        protected void AdicionarErroProcessamento(string erro)
+        {
+            Erros.Add(erro);
+        }
+
+        protected void LimparErrosProcessamento()
+        {
+            Erros.Clear();
         }
     }
 }

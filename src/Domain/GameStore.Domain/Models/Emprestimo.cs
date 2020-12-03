@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace GameStore.Domain.Models
 {
     public class Emprestimo : Entity
     {
+        public Guid AmigoId { get; set; }
         public Amigo Amigo { get; set; }
-
-        /* EF Relations */
-        public IEnumerable<Jogo> Jogos { get; set; }
+        public Guid JogoId { get; set; }
+        public Jogo Jogo { get; set; }
     }
 }
