@@ -32,7 +32,7 @@ namespace GameStore.WebApp.MVC.Services
 
         public async Task Remover(Guid id)
         {
-            await _JogoRepository.Remover(id);
+            await _JogoRepository.RemoverWithDetachLocal(id);
         }
 
         public void Dispose()

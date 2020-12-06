@@ -68,6 +68,9 @@ namespace GameStore.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<bool>("Emprestado")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Genero")
                         .IsRequired()
                         .HasColumnType("varchar(100)");

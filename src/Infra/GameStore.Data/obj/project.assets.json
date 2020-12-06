@@ -5741,11 +5741,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Infra\\GameStore.Data\\GameStore.Data.csproj",
+      "projectUniqueName": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Infra\\GameStore.Data\\GameStore.Data.csproj",
       "projectName": "GameStore.Data",
-      "projectPath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Infra\\GameStore.Data\\GameStore.Data.csproj",
+      "projectPath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Infra\\GameStore.Data\\GameStore.Data.csproj",
       "packagesPath": "C:\\Users\\Rodrigo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Infra\\GameStore.Data\\obj\\",
+      "outputPath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Infra\\GameStore.Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rodrigo\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5761,8 +5761,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj": {
-              "projectPath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj"
+            "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj": {
+              "projectPath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj"
             }
           }
         }

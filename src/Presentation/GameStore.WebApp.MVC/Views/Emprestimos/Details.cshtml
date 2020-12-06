@@ -1,9 +1,7 @@
 ﻿@using GameStore.WebApp.MVC.Extensions
 @model GameStore.WebApp.MVC.Models.EmprestimoViewModel
 
-@{
-    ViewData["Title"] = "Detalhes";
-}
+@{ ViewData["Title"] = "Detalhes"; }
 
 <h1>@ViewData["Title"]</h1>
 
@@ -32,10 +30,33 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-dark" asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
     <a class="btn btn-info" asp-action="Index">Voltar</a>
 </div>
 
+<div id="JogoTarget">
+    <partial name="_DetalhesJogo" />
+</div>
 
-<partial name="_DetalhesAmigo" />
-<partial name="_DetalhesJogo" />
+<div id="AmigoTarget">
+    <partial name="_DetalhesAmigo" />
+</div>
+
+
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        $(document).ready(function () {
+            AjaxModal();
+        });
+    </script>
+
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GOLl+/dhBKWVDo7UqcvaHwRYOtq3gOmHRd8m1EQparZtgBv9rH3OGsY6FoSV4S10TLbyip4QWWbW/ZTBfhY6/Q==",
+  "dgSpecHash": "q1Jpg/90fqBlRxKjJigKtwpHOZdIJesKRXQqWz+WbwhmXkPWDtOoXC76EnAGBNnH0e6C+feEnzIpghZZ3IEP7w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Presentation\\GameStore.WebApp.MVC\\GameStore.WebApp.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Presentation\\GameStore.WebApp.MVC\\GameStore.WebApp.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodrigo\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

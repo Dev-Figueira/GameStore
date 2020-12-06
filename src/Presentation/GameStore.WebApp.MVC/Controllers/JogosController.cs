@@ -58,6 +58,8 @@ namespace GameStore.WebApp.MVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(JogoViewModel jogoViewModel)
         {
+            jogoViewModel.Emprestado = false;
+
             if (!ModelState.IsValid) return View(jogoViewModel);
 
             await _jogoService.Adicionar(_mapper.Map<Jogo>(jogoViewModel));

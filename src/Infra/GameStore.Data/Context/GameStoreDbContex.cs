@@ -9,6 +9,8 @@ namespace GameStore.Data.Context
 {
     public class GameStoreDbContex : DbContext
     {
+        public GameStoreDbContex(){}
+
         public GameStoreDbContex(DbContextOptions<GameStoreDbContex> options) : base(options) { }
 
         public DbSet<Amigo> Amigos { get; set; }

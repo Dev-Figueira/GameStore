@@ -1,4 +1,5 @@
-﻿using GameStore.Domain.Interfaces;
+﻿using GameStore.Data.Repositories;
+using GameStore.Domain.Interfaces;
 using GameStore.Domain.Models;
 using GameStore.Domain.Models.Validations;
 using System;
@@ -11,13 +12,16 @@ namespace GameStore.WebApp.MVC.Services
     {
         private readonly IEmprestimoRepository _EmprestimoRepository;
         private readonly IAmigoRepository _AmigoRepository;
+        private readonly IJogoRepository _JogoRepository;
 
         public EmprestimoService(IEmprestimoRepository EmprestimoRepository,
                                  IAmigoRepository AmigoRepository,
+                                 IJogoRepository JogoRepository,
                                  INotificador notificador) : base(notificador)
         {
             _EmprestimoRepository = EmprestimoRepository;
             _AmigoRepository = AmigoRepository;
+            _JogoRepository = JogoRepository;
         }
 
         public async Task Adicionar(Emprestimo emprestimo)
@@ -25,11 +29,8 @@ namespace GameStore.WebApp.MVC.Services
             if (!ExecutarValidacao(new EmprestimoValidation(), emprestimo)
                 || !ExecutarValidacao(new AmigoValidation(), emprestimo.Amigo)) return;
 
-            if (_EmprestimoRepository.Buscar(f => f.Amigo.Nome == emprestimo.Amigo.Nome).Result.Any())
-            {
-                Notificar("Já existe um Emprestimo com este documento infomado.");
-                return;
-            }
+            emprestimo.Jogo.Emprestado = true;
+            await _JogoRepository.Atualizar(emprestimo.Jogo);
 
             if (emprestimo.Amigo.Id == Guid.Empty)
             {
@@ -52,29 +53,30 @@ namespace GameStore.WebApp.MVC.Services
             await _EmprestimoRepository.Atualizar(emprestimo);
         }
 
-        public async Task AtualizarAmigo(Amigo Amigo)
+        public async Task AtualizarAmigo(Amigo amigo)
         {
-            if (!ExecutarValidacao(new AmigoValidation(), Amigo)) return;
+            if (!ExecutarValidacao(new AmigoValidation(), amigo)) return;
 
-            await _AmigoRepository.Atualizar(Amigo);
+            await _AmigoRepository.Atualizar(amigo);
+        }
+
+        public async Task AtualizarJogo(Jogo jogo)
+        {
+            if (!ExecutarValidacao(new JogoValidation(), jogo)) return;
+
+            await _JogoRepository.Atualizar(jogo);
         }
 
         public async Task Remover(Guid id)
         {
-            if (_EmprestimoRepository.ObterEmprestimoJogosAmigo(id).Result.Jogo != null)
-            {
-                Notificar("O Emprestimo possui jogos cadastrados!");
-                return;
-            }
-
             var Amigo = await _AmigoRepository.ObterAmigoPorEmprestimo(id);
+
+            await _EmprestimoRepository.Remover(id);
 
             if (Amigo != null)
             {
                 await _AmigoRepository.Remover(Amigo.Id);
             }
-
-            await _EmprestimoRepository.Remover(id);
         }
 
         public void Dispose()

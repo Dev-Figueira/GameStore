@@ -1,8 +1,6 @@
 ﻿@model GameStore.WebApp.MVC.Models.EmprestimoViewModel
 
-@{
-    ViewData["Title"] = "Editar Emprestimo";
-}
+@{ ViewData["Title"] = "Editar Emprestimo"; }
 
 <h1>@ViewData["Title"]</h1>
 
@@ -16,14 +14,13 @@
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label asp-for="Amigo"></label>
-            <input asp-for="Amigo" class="form-control" />
-            <span asp-validation-for="Amigo" class="text-danger"></span>
+            <label asp-for="AmigoId"></label>
+            <input asp-for="AmigoId" class="form-control" />
+            <span asp-validation-for="AmigoId" class="text-danger"></span>
 
-            <label asp-for="Jogo"></label>
-            <input asp-for="Jogo" class="form-control" />
-            <span asp-validation-for="Jogo" class="text-danger"></span>
-
+            <label asp-for="JogoId"></label>
+            <input asp-for="JogoId" class="form-control" />
+            <span asp-validation-for="JogoId" class="text-danger"></span>
         </div>
     </div>
 
@@ -33,12 +30,12 @@
     </div>
 </form>
 
-<div id="EnderecoTarget">
-    <partial name="_DetalhesEndereco" />
+<div id="AmigoTarget">
+    <partial name="_DetalhesAmigo" />
 </div>
 
 <hr />
-<h4>Produtos</h4>
+<h4>Jogo</h4>
 <div>
     <partial name="../Jogos/_ListaJogos" model="@Model.Jogo" />
 </div>

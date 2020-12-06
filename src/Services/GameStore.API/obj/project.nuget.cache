@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "pRXVxQA/imIxaqCMaZfhpKERNBDMV9avg2l16fYKOL5apyqse+r7QLluAVYcNGmuMaSN7LYIXlcegKpTiKi5jw==",
+  "dgSpecHash": "cNsQ5ywJAet1XjwQv9zKCf48+GE2zzK+zjj84IMyvXsBIWrOW4+dBfQeqz3TLS++8OTo1eHe+Yvi72x4x/mvag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\services\\GameStore.API\\GameStore.API.csproj",
+  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\services\\GameStore.API\\GameStore.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodrigo\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.7\\microsoft.aspnetcore.authentication.jwtbearer.3.1.7.nupkg.sha512",

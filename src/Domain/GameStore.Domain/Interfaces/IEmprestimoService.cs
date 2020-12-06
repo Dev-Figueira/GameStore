@@ -11,5 +11,6 @@ namespace GameStore.Domain.Interfaces
         Task Remover(Guid id);
 
         Task AtualizarAmigo(Amigo amigo);
+        Task AtualizarJogo(Jogo jogo);
     }
 }

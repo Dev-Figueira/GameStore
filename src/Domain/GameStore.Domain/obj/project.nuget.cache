@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HJ55mnV0JfW34lrW2l921u5d0JTSjuL2XHXeBkGZCBMg1QrTSTmxnDFnVxjKW2q0JSiKtc84VbFFPJjSoSvsDw==",
+  "dgSpecHash": "w+OI/UwYunhvKGUB23eOGfiqyvRa5+hrUfVtckc/JfAqOJ5GAOnbQWzAhyQV/S/RtycvUeBLHfkw1j5//fNK9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\Projeto-Invilia\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\Domain\\GameStore.Domain\\GameStore.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rodrigo\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\system.componentmodel.annotations\\4.4.1\\system.componentmodel.annotations.4.4.1.nupkg.sha512"

@@ -4,7 +4,6 @@ using GameStore.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GameStore.Data.Repositories
@@ -13,6 +12,11 @@ namespace GameStore.Data.Repositories
     {
         public JogoRepository(GameStoreDbContex context) : base(context)
         {
+        }
+
+        public async Task<IEnumerable<Jogo>> ObterTodosNaoEmprestado()
+        {
+            return await Buscar(p => p.Emprestado == false);
         }
     }
 }

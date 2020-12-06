@@ -55,7 +55,7 @@ namespace GameStore.WebApp.MVC.Controllers
         public async Task<IActionResult> Create()
         {
             ViewBag.ComboAmigo = _mapper.Map<IEnumerable<AmigoViewModel>>(await _amigoRepository.ObterTodos());
-            ViewBag.ComboJogos = _mapper.Map<IEnumerable<JogoViewModel>>(await _jogoRepository.ObterTodos());
+            ViewBag.ComboJogos = _mapper.Map<IEnumerable<JogoViewModel>>(await _jogoRepository.ObterTodosNaoEmprestado());
 
             return View();
         }
@@ -101,16 +101,60 @@ namespace GameStore.WebApp.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpDelete("{id:guid}")]
+        [Route("excluir-emprestimo/{id:guid}")]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var emprestimoViewModelo = await ObterEmprestimoAmigo(id);
+            var emprestimoViewModel = await ObterEmprestimoJogoAmigo(id);
 
-            if (emprestimoViewModelo == null) return NotFound();
+            if (emprestimoViewModel == null)
+            {
+                return NotFound();
+            }
+
+            return View(emprestimoViewModel);
+        }
+
+        [Route("excluir-emprestimo/{id:guid}")]
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(Guid id)
+        {
+            var emprestimo = await ObterEmprestimoJogoAmigo(id);
+
+            if (emprestimo == null) return NotFound();
 
             await _emprestimoService.Remover(id);
 
-            return CustomResponse(_emprestimoService);
+            if (!OperacaoValida()) return View(emprestimo);
+
+            return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        [Route("obter-amigo-emprestimo/{id:guid}")]
+        public async Task<IActionResult> ObterAmigo(Guid id)
+        {
+            var emprestimo = await ObterEmprestimoAmigo(id);
+
+            if (emprestimo == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("_DetalhesAmigo", emprestimo);
+        }
+
+        [AllowAnonymous]
+        [Route("obter-jogo-emprestimo/{id:guid}")]
+        public async Task<IActionResult> ObterJogo(Guid id)
+        {
+            var emprestimo = await ObterEmprestimoJogoAmigo(id);
+
+            if (emprestimo == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("_DetalhesJogo", emprestimo);
         }
 
         [Route("atualizar-amigo-emprestimo/{id:guid}")]
@@ -138,7 +182,36 @@ namespace GameStore.WebApp.MVC.Controllers
 
             if (!OperacaoValida()) return PartialView("_AtualizarAmigo", emprestimoViewModel);
 
-            var url = Url.Action("ObterAmigo", "Emprestimo", new { id = emprestimoViewModel.Id });
+            var url = Url.Action("ObterAmigo", "Emprestimos", new { id = emprestimoViewModel.Id });
+            return Json(new { success = true, url });
+        }
+
+        [Route("atualizar-jogo-emprestimo/{id:guid}")]
+        public async Task<IActionResult> AtualizarJogo(Guid id)
+        {
+            var emprestimo = await ObterEmprestimoJogoAmigo(id);
+
+            if (emprestimo == null)
+            {
+                return NotFound();
+            }
+
+            return PartialView("_AtualizarJogo", new EmprestimoViewModel { Jogo = emprestimo.Jogo});
+        }
+
+        [Route("atualizar-jogo-emprestimo/{id:guid}")]
+        [HttpPost]
+        public async Task<IActionResult> AtualizarJogo(EmprestimoViewModel emprestimoViewModel)
+        {
+            ModelState.Remove("Nome");
+
+            if (!ModelState.IsValid) return PartialView("_AtualizarJogo", emprestimoViewModel);
+
+            await _emprestimoService.AtualizarJogo(_mapper.Map<Jogo>(emprestimoViewModel.Jogo));
+
+            if (!OperacaoValida()) return PartialView("_AtualizarJogo", emprestimoViewModel);
+
+            var url = Url.Action("ObterJogo", "Emprestimos", new { id = emprestimoViewModel.Id });
             return Json(new { success = true, url });
         }
 

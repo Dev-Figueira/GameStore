@@ -3,7 +3,7 @@ using GameStore.Domain.Notificacoes;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace GameStore.Domain
+namespace GameStore.Domain.Notificacoes
 {
     public class Notificador : INotificador
     {

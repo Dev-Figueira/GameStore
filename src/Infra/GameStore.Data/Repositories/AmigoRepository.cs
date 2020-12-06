@@ -15,11 +15,11 @@ namespace GameStore.Data.Repositories
 
         public async Task<Amigo> ObterAmigoPorEmprestimo(Guid emprestimoId)
         {
-            var amigo = await Db.Emprestimos.AsNoTracking()
+            var emprestimo = await Db.Emprestimos.AsNoTracking()
                  .FirstOrDefaultAsync(f => f.Id == emprestimoId);
 
             return await Db.Amigos.AsNoTracking()
-                .FirstOrDefaultAsync(f => f.Id == amigo.Id);
+                .FirstOrDefaultAsync(f => f.Id == emprestimo.AmigoId);
 
         }
     }

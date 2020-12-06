@@ -13,7 +13,7 @@ namespace GameStore.Data.Repositories
     public abstract class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity, new()
     {
         protected readonly GameStoreDbContex Db;
-        protected readonly DbSet<TEntity> DbSet;
+        public DbSet<TEntity> DbSet;
 
         protected Repository(GameStoreDbContex db)
         {
@@ -52,6 +52,12 @@ namespace GameStore.Data.Repositories
         }
 
         public virtual async Task Remover(Guid id)
+        {
+            DbSet.Remove(new TEntity { Id = id });
+            await SaveChanges();
+        }
+
+        public virtual async Task RemoverWithDetachLocal(Guid id)
         {
             DetachLocal(new TEntity { Id = id });
             DbSet.Remove(new TEntity { Id = id });
