@@ -23,7 +23,7 @@ services:
             dockerfile: ./Services/GameStore.API/Dockerfile  
         restart: always    
         environment: 
-            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_ENVIRONMENT=Production
             - ASPNETCORE_URLS=http://+:5101;http://+5102
         depends_on:
             - sql-server
@@ -38,7 +38,7 @@ services:
         ports: 
             - 5001:5001    
         environment:
-            - ASPNETCORE_ENVIROMENT=Development
+            - ASPNETCORE_ENVIROMENT=Production
             - ASPNETCORE_URLS=http://*:5001
         depends_on:
             - sql-server

@@ -49,7 +49,7 @@ namespace GameStore.WebApp.MVC.Controllers
         }
 
         [Route("novo-Jogo")]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return View();
         }
