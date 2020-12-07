@@ -1,0 +1,47 @@
+﻿version: "3"
+
+services:
+
+  sql-server:
+        image: gamestore-sql-server:latest
+        container_name: gamestore-sql-server
+        build: 
+            context: ../sql
+            dockerfile: ./Dockerfile
+        environment:
+            MSSQL_SA_PASSWORD: "MeuDB@123"
+            ACCEPT_EULA: "Y"
+        ports:
+            - "1433:1433"
+        restart: always
+        
+  api-identidade:
+        image: gamestore-api-identidade:latest
+        container_name: gamestore-api-identidade    
+        build: 
+            context: ../src
+            dockerfile: ./Services/GameStore.API/Dockerfile  
+        restart: always    
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=http://+:5101;http://+5102
+        depends_on:
+            - sql-server
+            
+  web-mvc:
+        image: gamestore-web-mvc:latest
+        container_name: gamestore-web-mvc
+        build:
+            context: ../src
+            dockerfile: ./Presentation/GameStore.WebApp.MVC/Dockerfile
+        restart: always
+        ports: 
+            - 5001:5001    
+        environment:
+            - ASPNETCORE_ENVIROMENT=Development
+            - ASPNETCORE_URLS=http://*:5001
+        depends_on:
+            - sql-server
+            - api-identidade
+
+  

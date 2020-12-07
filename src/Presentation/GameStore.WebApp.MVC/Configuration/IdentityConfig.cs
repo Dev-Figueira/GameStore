@@ -26,31 +26,6 @@ namespace GameStore.WebApp.MVC.Configuration
                 .AddEntityFrameworkStores<GameStoreDbContex>()
                 .AddDefaultTokenProviders();
 
-            //var appSettingsSection = configuration.GetSection("AppSettings");
-            //services.Configure<AppSettings>(appSettingsSection);
-
-            //var appSettings = appSettingsSection.Get<AppSettings>();
-            //var key = Encoding.ASCII.GetBytes(appSettings.Secret);
-
-            //services.AddAuthentication(op =>
-            //{
-            //    op.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-            //    op.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            //}).AddJwtBearer(bearerOptions =>
-            //{
-            //    bearerOptions.RequireHttpsMetadata = true;
-            //    bearerOptions.SaveToken = true;
-            //    bearerOptions.TokenValidationParameters = new TokenValidationParameters
-            //    {
-            //        ValidateIssuerSigningKey = true,
-            //        IssuerSigningKey = new SymmetricSecurityKey(key),
-            //        ValidateIssuer = true,
-            //        ValidateAudience = true,
-            //        ValidAudience = appSettings.ValidoEm,
-            //        ValidIssuer = appSettings.Emissor,
-            //    };
-            //});
-
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {

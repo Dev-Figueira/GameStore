@@ -7,12 +7,12 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["src/services/GameStore.API/GameStore.API.csproj", "src/services/GameStore.API/"]
-COPY ["src/Infra/GameStore.Data/GameStore.Data.csproj", "src/Infra/GameStore.Data/"]
-COPY ["src/Domain/GameStore.Domain/GameStore.Domain.csproj", "src/Domain/GameStore.Domain/"]
-RUN dotnet restore "src/services/GameStore.API/GameStore.API.csproj"
+COPY ["./Services/GameStore.API/GameStore.API.csproj", "Services/GameStore.API/"]
+COPY ["./Infra/GameStore.Data/GameStore.Data.csproj", "Infra/GameStore.Data/"]
+COPY ["./Domain/GameStore.Domain/GameStore.Domain.csproj", "Domain/GameStore.Domain/"]
+RUN dotnet restore "Services/GameStore.API/GameStore.API.csproj"
 COPY . .
-WORKDIR "/src/src/services/GameStore.API"
+WORKDIR "Services/GameStore.API"
 RUN dotnet build "GameStore.API.csproj" -c Release -o /app/build
 
 FROM build AS publish

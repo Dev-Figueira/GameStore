@@ -164,3 +164,4 @@ C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcorea
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csproj.CoreCompileInputs.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\bin\Debug\netcoreapp3.1\appsettings.Production.json

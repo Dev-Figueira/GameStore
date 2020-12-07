@@ -1,4 +1,4 @@
-﻿using GameStore.API.Extensions;
+﻿using GameStore.WebApp.MVC.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Localization;

@@ -23,7 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infra\GameStore.Data\GameStore.Data.csproj" />
-    <ProjectReference Include="..\..\services\GameStore.API\GameStore.API.csproj" />
+    <ProjectReference Include="..\..\Services\GameStore.API\GameStore.API.csproj" />
   </ItemGroup>
 
 </Project>

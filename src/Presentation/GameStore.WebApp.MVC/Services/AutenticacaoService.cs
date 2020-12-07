@@ -1,6 +1,9 @@
 ﻿using GameStore.Domain.Interfaces;
+using GameStore.WebApp.MVC.Extensions;
 using GameStore.WebApp.MVC.Models;
 using GameStore.WebApp.MVC.Services.Interfaces;
+using Microsoft.Extensions.Options;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -13,8 +16,11 @@ namespace GameStore.WebApp.MVC.Services
         private readonly HttpClient _httpClient;
 
         public AutenticacaoService(HttpClient httpClient,
+                                   IOptions<AppSettings> settings,
                                    INotificador notificador) : base(notificador)
         {
+            httpClient.BaseAddress = new Uri(settings.Value.AutenticacaoUrl);
+            _httpClient = httpClient;
             _httpClient = httpClient;
         }
 
@@ -22,7 +28,7 @@ namespace GameStore.WebApp.MVC.Services
         {
             var registroContent = ObterConteudo(usuarioLogin);
 
-            var response = await _httpClient.PostAsync("https://localhost:44359/api/identidade/autenticar", registroContent);
+            var response = await _httpClient.PostAsync("/api/identidade/autenticar", registroContent);
 
             var options = new JsonSerializerOptions
             {
@@ -44,7 +50,7 @@ namespace GameStore.WebApp.MVC.Services
         {
             var registroContent = ObterConteudo(usuarioRegistro);
 
-            var response = await _httpClient.PostAsync("https://localhost:44359/api/identidade/nova-conta", registroContent);
+            var response = await _httpClient.PostAsync("/api/identidade/nova-conta", registroContent);
 
             var options = new JsonSerializerOptions
             {

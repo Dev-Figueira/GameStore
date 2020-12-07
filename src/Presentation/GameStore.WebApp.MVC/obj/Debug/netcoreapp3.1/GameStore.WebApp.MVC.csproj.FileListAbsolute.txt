@@ -294,3 +294,4 @@ C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Deb
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\bin\Debug\netcoreapp3.1\libman.json
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Emprestimos\_AtualizarJogo.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Emprestimos\_Jogo.cshtml.g.cs
+C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\bin\Debug\netcoreapp3.1\appsettings.Production.json
