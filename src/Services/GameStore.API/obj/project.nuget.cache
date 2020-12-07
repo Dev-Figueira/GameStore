@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cNsQ5ywJAet1XjwQv9zKCf48+GE2zzK+zjj84IMyvXsBIWrOW4+dBfQeqz3TLS++8OTo1eHe+Yvi72x4x/mvag==",
+  "dgSpecHash": "hoPB5Cs5zRQx4mvqpfh1Q9ldgUM3VlFF0ZLYNgAHD9NlrGasGhJVyWVrTcdDyM2TQU7OjNPi7mpnFCNSmf/2LQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rodrigo\\Desktop\\GameStore\\src\\services\\GameStore.API\\GameStore.API.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.openapi\\1.1.4\\microsoft.openapi.1.1.4.nupkg.sha512",
+    "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.9\\microsoft.visualstudio.azure.containers.tools.targets.1.10.9.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
     "C:\\Users\\Rodrigo\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",

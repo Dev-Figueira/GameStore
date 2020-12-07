@@ -154,9 +154,6 @@ C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\bin\Debug\netcorea
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.AssemblyInfoInputs.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.AssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csproj.CoreCompileInputs.cache
-C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.RazorTargetAssemblyInfo.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csproj.CopyComplete
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\staticwebassets\GameStore.API.StaticWebAssets.Manifest.cache
@@ -164,3 +161,6 @@ C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcorea
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.dll
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.pdb
 C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.genruntimeconfig.cache
+C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\GameStore\src\services\GameStore.API\obj\Debug\netcoreapp3.1\GameStore.API.MvcApplicationPartsAssemblyInfo.cache
