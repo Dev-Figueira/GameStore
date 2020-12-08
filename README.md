@@ -16,10 +16,10 @@ A aplicação é composta de uma API desenvolvida em .NET Core com base de dados
 
 1. Clone o projeto na sua máquina
 
-2. Rode o docker-compose up 
+2. Rode o docker-compose
 Acessando o **src/Docker** e digitando **docker-compose up**
 
-3. Acesse sua aplicação em http://localhost:5001 to access the application
+3. Acesse sua aplicação em http://localhost:5001
 
 4. Para finalizar e fechar as imagens/containner
 **Run docker-compose down --rmi all** 
