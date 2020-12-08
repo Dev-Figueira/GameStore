@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/mssql/server:2017-latest
+FROM mcr.microsoft.com/mssql/rhel/server:latest
 RUN mkdir -p /usr/work
 WORKDIR /usr/work
 COPY . /usr/work/
