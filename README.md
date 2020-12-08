@@ -26,6 +26,11 @@ Acessando o **src/Docker** e digitando **docker-compose up**
 4. Para finalizar e fechar as imagens/containner
 **Run docker-compose down --rmi all** 
 
+## Acesso Padrão
+
+Email = admin@test.com.br
+Senha = Admin@123
+
 ## Exemplos
 
 Abaixo seguem algumas telas de exemplo da aplicação. 
