@@ -11,25 +11,37 @@ A aplicação é composta de uma API desenvolvida em .NET Core com base de dados
 - [.NET Core](https://dotnet.microsoft.com/) (somente para uso sem Docker)
 - [Visual Studio](https://visualstudio.microsoft.com/pt-br/vs/) ou [Visual Studio Code](https://code.visualstudio.com/)
 
+
 ## Docker
 
-Para inicializar a aplicação execute o script *GameStoreStart.sh*.
+1. Clone o projeto na sua máquina
+
+2. Rode o docker-compose up 
+Acessando o **src/Docker** e digitando **docker-compose up**
+
+3. Acesse sua aplicação em http://localhost:5001 to access the application
+
+4. Para finalizar e fechar as imagens/containner
+**Run docker-compose down --rmi all** 
 
 ## Exemplos
 
 Abaixo seguem algumas telas de exemplo da aplicação. 
 
-#### Login 
-![Login](.docs/tela01.png)
-
-#### Cadastro de Usuário 
-![Cadastro de Usuário](.docs/tela02.png)
-
 #### Home 
-![Home](.docs/tela03.png)
+![Home](.docs/Home.jpg)
 
-#### Amigos 
-![Amigos](.docs/tela04.png)
+#### Login 
+![Login](.docs/Login.jpg)
+
+#### Cadastro de Emprestimo 
+![Cadastro de Emprestimo](.docs/Emprestimo-Novo.jpg)
+
+#### Lista de Jogos 
+![Lista de Jogos](.docs/Jogos-Lista.jpg)
+
+#### Emprestimo 
+![Emprestimo](.docs/Emprestimo - Detalhes.jpg)
 
 #### Jogos 
-![Jogos](.docs/tela05.png)
+![Jogos](.docs/Jogos-Detalhes.jpg)
