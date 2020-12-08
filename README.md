@@ -29,19 +29,19 @@ Acessando o **src/Docker** e digitando **docker-compose up**
 Abaixo seguem algumas telas de exemplo da aplicação. 
 
 #### Home 
-![Home](.docs/Home.jpg)
+![Home](docs/Home.jpg)
 
 #### Login 
-![Login](.docs/Login.jpg)
+![Login](docs/Login.jpg)
 
 #### Cadastro de Emprestimo 
-![Cadastro de Emprestimo](.docs/Emprestimo-Novo.jpg)
+![Cadastro de Emprestimo](docs/Emprestimo-Novo.jpg)
 
 #### Lista de Jogos 
-![Lista de Jogos](.docs/Jogos-Lista.jpg)
+![Lista de Jogos](docs/Jogos-Lista.jpg)
 
 #### Emprestimo 
-![Emprestimo](.docs/Emprestimo - Detalhes.jpg)
+![Emprestimo](docs/Emprestimo-Detalhes.jpg)
 
 #### Jogos 
-![Jogos](.docs/Jogos-Detalhes.jpg)
+![Jogos](docs/Jogos-Detalhes.jpg)
