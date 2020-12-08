@@ -19,6 +19,8 @@ A aplicação é composta de uma API desenvolvida em .NET Core com base de dados
 2. Rode o docker-compose
 Acessando o **src/Docker** e digitando **docker-compose up**
 
+**OBS: Aguarde 60s Após o provisionamento e start do banco que automaticamente será disparado o script para dar carga ao banco.**
+
 3. Acesse sua aplicação em http://localhost:5001
 
 4. Para finalizar e fechar as imagens/containner
