@@ -3,7 +3,6 @@ using GameStore.Domain.Interfaces;
 using GameStore.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GameStore.Data.Repositories

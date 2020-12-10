@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace GameStore.Data.Models
+namespace GameStore.Data.Mappings
 {
     public class EmprestimoMapping : IEntityTypeConfiguration<Emprestimo>
     {

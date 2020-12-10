@@ -5,7 +5,6 @@ using GameStore.WebApp.MVC.Services.Interfaces;
 using Microsoft.Extensions.Options;
 using System;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 

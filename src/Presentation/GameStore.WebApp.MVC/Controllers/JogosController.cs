@@ -18,10 +18,8 @@ namespace GameStore.WebApp.MVC.Controllers
         private readonly IMapper _mapper;
 
         public JogosController(IJogoRepository jogoRepository,
-                                  IEmprestimoRepository emprestimoRepository,
                                   IMapper mapper,
-                                  IJogoService jogoService,
-                                  INotificador notificador)
+                                  IJogoService jogoService)
         {
             _jogoRepository = jogoRepository;
             _mapper = mapper;
@@ -38,14 +36,14 @@ namespace GameStore.WebApp.MVC.Controllers
         [Route("dados-do-Jogo/{id:guid}")]
         public async Task<IActionResult> Details(Guid id)
         {
-            var JogoViewModel = await ObterJogo(id);
+            var jogoViewModel = await ObterJogo(id);
 
-            if (JogoViewModel == null)
+            if (jogoViewModel == null)
             {
                 return NotFound();
             }
 
-            return View(JogoViewModel);
+            return View(jogoViewModel);
         }
 
         [Route("novo-Jogo")]

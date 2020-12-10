@@ -4,11 +4,9 @@ using GameStore.Domain.Interfaces;
 using GameStore.Domain.Models;
 using GameStore.Domain.Notificacoes;
 using GameStore.WebApp.MVC.Extensions;
-using System;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace GameStore.WebApp.MVC.Services
 {
@@ -69,5 +67,5 @@ namespace GameStore.WebApp.MVC.Services
             response.EnsureSuccessStatusCode();
             return true;
         }
-        }
+    }
 }

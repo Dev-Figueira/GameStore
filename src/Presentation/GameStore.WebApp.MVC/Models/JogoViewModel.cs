@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,7 +15,7 @@ namespace GameStore.WebApp.MVC.Models
         public string Nome { get; set; }
 
         [Display(Name = "Descrição/Gênero")]
-        [StringLength(15, ErrorMessage = "O nome deve ter ate 100 Caracteres")]
+        [StringLength(100, ErrorMessage = "O nome deve ter ate 100 Caracteres")]
         public string Genero { get; set; }
 
         [DisplayName("Emprestado?")]

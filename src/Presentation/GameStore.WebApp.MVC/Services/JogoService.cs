@@ -8,36 +8,36 @@ namespace GameStore.WebApp.MVC.Services
 {
     public class JogoService : Service, IJogoService
     {
-        private readonly IJogoRepository _JogoRepository;
+        private readonly IJogoRepository _jogoRepository;
 
-        public JogoService(IJogoRepository JogoRepository,
+        public JogoService(IJogoRepository jogoRepository,
                               INotificador notificador) : base(notificador)
         {
-            _JogoRepository = JogoRepository;
+            _jogoRepository = jogoRepository;
         }
 
         public async Task Adicionar(Jogo jogo)
         {
             if (!ExecutarValidacao(new JogoValidation(), jogo)) return;
 
-            await _JogoRepository.Adicionar(jogo);
+            await _jogoRepository.Adicionar(jogo);
         }
 
         public async Task Atualizar(Jogo jogo)
         {
             if (!ExecutarValidacao(new JogoValidation(), jogo)) return;
 
-            await _JogoRepository.Atualizar(jogo);
+            await _jogoRepository.Atualizar(jogo);
         }
 
         public async Task Remover(Guid id)
         {
-            await _JogoRepository.RemoverWithDetachLocal(id);
+            await _jogoRepository.RemoverWithDetachLocal(id);
         }
 
         public void Dispose()
         {
-            _JogoRepository?.Dispose();
+            _jogoRepository?.Dispose();
         }
     }
 }
