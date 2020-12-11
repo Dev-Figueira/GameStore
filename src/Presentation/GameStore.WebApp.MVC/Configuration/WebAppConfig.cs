@@ -38,6 +38,8 @@ namespace GameStore.WebApp.MVC.Configuration
                 SupportedUICultures = supportedCultures
             });
 
+            app.UseMiddleware<ExceptionMiddleware>();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

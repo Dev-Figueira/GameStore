@@ -10,6 +10,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using GameStore.API.Models;
+using GameStore.API.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace GameStore.API.Controllers
 {
@@ -19,18 +22,24 @@ namespace GameStore.API.Controllers
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
         private readonly AppSettings _appSettings;
+        private readonly AppTokenSettings _appSettingsToken;
+        private readonly ApplicationDbContext _context;
 
         public AuthController(SignInManager<IdentityUser> signInManager,
                               UserManager<IdentityUser> userManager,
-                              IOptions<AppSettings> appSettings)
+                              IOptions<AppSettings> appSettings,
+                              IOptions<AppTokenSettings> appSettingsToken,
+                              ApplicationDbContext context)
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _appSettings = appSettings.Value;
+            _appSettingsToken = appSettingsToken.Value;
+            _context = context;
         }
 
         [HttpPost("nova-conta")]
-        public async Task<ActionResult> Registrar([FromBody]UsuarioRegistro usuarioRegistro)
+        public async Task<ActionResult> Registrar([FromBody] UsuarioRegistro usuarioRegistro)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
@@ -58,7 +67,7 @@ namespace GameStore.API.Controllers
         }
 
         [HttpPost("autenticar")]
-        public async Task<ActionResult> Login([FromBody]UsuarioLogin usuarioLogin)
+        public async Task<ActionResult> Login([FromBody] UsuarioLogin usuarioLogin)
         {
             if (!ModelState.IsValid) return CustomResponse(ModelState);
 
@@ -73,10 +82,28 @@ namespace GameStore.API.Controllers
             if (result.IsLockedOut)
             {
                 AdicionarErroProcessamento("Usuário temporariamente bloqueado por tentativas inválidas");
-                return CustomResponse();
+                return CustomResponse(); return CustomResponse();
             }
 
             AdicionarErroProcessamento("Usuário temporariamente bloqueado por tentativas inválidas");
+            return CustomResponse();
+        }
+
+        [HttpPost("refresh-token")]
+        public async Task<ActionResult> RefreshToken([FromBody] string refreshToken)
+        {
+            if (string.IsNullOrEmpty(refreshToken))
+            {
+                AdicionarErroProcessamento("Refresh Token Inválido");
+                return CustomResponse();
+            }
+
+            var token = ObterRefreshToken(Guid.Parse(refreshToken)).Result;
+
+            if (token != null)
+                return CustomResponse(await GerarJwt(token.UserName));
+
+            AdicionarErroProcessamento("Refresh Token Expirado");
             return CustomResponse();
         }
 
@@ -112,9 +139,12 @@ namespace GameStore.API.Controllers
 
             var encodedToken = tokenHandler.WriteToken(token);
 
+            var refreshToken = await GerarRefreshToken(email);
+
             var response = new UsuarioRespostaLogin
             {
                 AccessToken = encodedToken,
+                RefreshToken = refreshToken.Token,
                 ExpiresIn = TimeSpan.FromHours(_appSettings.ExpiracaoHoras).TotalSeconds,
                 UsuarioToken = new UsuarioToken
                 {
@@ -123,8 +153,36 @@ namespace GameStore.API.Controllers
                     Claims = claims.Select(c => new UsuarioClaim { Type = c.Type, Value = c.Value })
                 }
             };
-
             return response;
+        }
+
+        private async Task<RefreshToken> GerarRefreshToken(string email)
+        {
+            var refreshToken = new RefreshToken()
+            {
+                UserName = email,
+                DateExpiration = DateTime.UtcNow.AddHours(_appSettingsToken.RefreshTokenExpiration)
+            };
+
+            _context.RefreshTokens.RemoveRange(_context.RefreshTokens.Where(u => u.UserName == email));
+            await _context.RefreshTokens.AddAsync(refreshToken);
+
+            await _context.SaveChangesAsync();
+
+            return refreshToken;
+        }
+
+        private async Task<RefreshToken> ObterRefreshToken(Guid refreshToken)
+        {
+            var token = await _context.RefreshTokens.AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Token == refreshToken);
+
+            if (token != null && token.DateExpiration.ToLocalTime() > DateTime.Now)
+            {
+                return token;
+            }
+
+            return null;
         }
     }
 }

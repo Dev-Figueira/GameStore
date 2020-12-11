@@ -16,6 +16,9 @@ namespace GameStore.API.Configuration
         public static IServiceCollection AddIdentityConfiguration(this IServiceCollection services,
             IConfiguration configuration)
         {
+            var appSettingsSectionRefresh = configuration.GetSection("AppTokenSettings");
+            services.Configure<AppTokenSettings>(appSettingsSectionRefresh);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 

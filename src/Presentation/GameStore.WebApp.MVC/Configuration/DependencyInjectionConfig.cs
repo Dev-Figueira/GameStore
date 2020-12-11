@@ -16,6 +16,10 @@ namespace GameStore.WebApp.MVC.Configuration
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<DbContext, GameStoreDbContex>();
+            services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped<IUser, AspNetUser>();
+
 
             services.AddScoped<IJogoRepository, JogoRepository>();
             services.AddScoped<IEmprestimoRepository, EmprestimoRepository>();
@@ -23,9 +27,6 @@ namespace GameStore.WebApp.MVC.Configuration
             services.AddScoped<INotificador, Notificador>();
             services.AddScoped<IEmprestimoService, EmprestimoService>();
             services.AddScoped<IJogoService, JogoService>();
-            services.AddHttpClient<IAutenticacaoService, AutenticacaoService>();
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped<IUser, AspNetUser>();
         }
     }
 }

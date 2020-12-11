@@ -248,9 +248,6 @@ C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\bin\Deb
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.csprojAssemblyReference.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.AssemblyInfoInputs.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.AssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.csproj.CoreCompileInputs.cache
-C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.RazorAssemblyInfo.cache
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.RazorAssemblyInfo.cs
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.TagHelpers.input.cache
@@ -295,3 +292,6 @@ C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\bin\Deb
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Emprestimos\_AtualizarJogo.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\Razor\Views\Emprestimos\_Jogo.cshtml.g.cs
 C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\bin\Debug\netcoreapp3.1\appsettings.Production.json
+C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Rodrigo\Desktop\GameStore\src\Presentation\GameStore.WebApp.MVC\obj\Debug\netcoreapp3.1\GameStore.WebApp.MVC.MvcApplicationPartsAssemblyInfo.cache

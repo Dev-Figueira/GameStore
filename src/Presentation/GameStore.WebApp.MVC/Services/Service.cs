@@ -50,7 +50,7 @@ namespace GameStore.WebApp.MVC.Services
                 Encoding.UTF8,
                 "application/json");
         }
-
+ 
         protected bool TratarErrosResponse(HttpResponseMessage response)
         {
             switch ((int)response.StatusCode)

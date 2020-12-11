@@ -1891,6 +1891,22 @@
         "runtime": {
           "GameStore.WebApp.MVC.dll": {}
         }
+      },
+      "Refit/5.2.0.0": {
+        "runtime": {
+          "Refit.dll": {
+            "assemblyVersion": "5.2.0.0",
+            "fileVersion": "5.2.4.44360"
+          }
+        }
+      },
+      "Grpc.Core.Api/2.0.0.0": {
+        "runtime": {
+          "Grpc.Core.Api.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.34.0.0"
+          }
+        }
       }
     }
   },
@@ -3044,6 +3060,16 @@
     },
     "GameStore.WebApp.MVC/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Refit/5.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Grpc.Core.Api/2.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

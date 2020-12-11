@@ -170,3 +170,5 @@ C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netc
 C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netcoreapp3.1\GameStore.WebApp.MVC.pdb
 C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netcoreapp3.1\GameStore.API.pdb
 C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netcoreapp3.1\appsettings.Production.json
+C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netcoreapp3.1\Grpc.Core.Api.dll
+C:\Users\Rodrigo\Desktop\GameStore\test\GameStore.IntegrationTest\bin\Debug\netcoreapp3.1\Refit.dll

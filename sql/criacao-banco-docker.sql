@@ -173,6 +173,22 @@ CREATE TABLE [dbo].[Emprestimos](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+/****** Object:  Table [dbo].[RefreshTokens]    Script Date: 11/12/2020 15:27:39 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[RefreshTokens](
+	[Id] [uniqueidentifier] NOT NULL,
+	[UserName] [nvarchar](max) NULL,
+	[Token] [uniqueidentifier] NOT NULL,
+	[DateExpiration] [datetime2](7) NOT NULL,
+ CONSTRAINT [PK_RefreshTokens] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
 /****** Object:  Table [dbo].[Jogos]    Script Date: 07/12/2020 18:01:13 ******/
 SET ANSI_NULLS ON
 GO
