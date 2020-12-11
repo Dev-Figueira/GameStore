@@ -36,6 +36,9 @@ Senha = Admin@123
 
 Abaixo seguem algumas telas de exemplo da aplicação. 
 
+#### Swagger - API Identidade 
+![Home](docs/Swagger.jpg)
+
 #### Home 
 ![Home](docs/Home.jpg)
 
